@@ -1,0 +1,283 @@
+
+
+
+.mw300 {
+    max-width: 300px;
+}
+
+.mw150 {
+    max-width: 150px;
+}
+
+.p {
+    padding: 1px 24px 24px;
+}
+
+.sbss {
+    display: flex;
+    align-items: center;
+}
+
+.icons-list {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+
+    .icon-item {
+        text-align: center;
+        padding: 16px 0;
+
+        &:hover {
+            background: #eee;
+        }
+
+        svg {
+            margin: 0 auto;
+        }
+
+        &__title {
+            white-space: nowrap;
+            margin-top: 8px;
+
+            &:before {
+                position: relative;
+                content: '<';
+            }
+
+            &:after {
+                position: relative;
+                content: ' />';
+            }
+        }
+    }
+}
+
+.a-menu-wrap {
+    background: #000000;
+    width: 220px;
+}
+
+.buttons {
+    display: flex;
+    gap: 24px;
+    white-space: nowrap;
+
+    &:after {
+        content: '.';
+        height: 1px;
+        width: 1px;
+        font-size: 1px;
+        color: transparent;
+    }
+}
+
+.btn-list {
+    display: flex;
+    gap: 24px;
+}
+
+.radio-list {
+    display: grid;
+    gap: 24px;
+
+    >* {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+.view-count-on-page {
+    display: flex;
+    align-items: center;
+    color: #748797;
+
+    &-first-text {
+        margin-right: 4px;
+    }
+
+    &-last-text {
+        margin-left: 12px;
+    }
+}
+
+.mt24 {
+    margin-top: 24px;
+}
+
+.mt32 {
+    margin-top: 32px;
+}
+
+.mw1000 {
+    max-width: 1000px;
+}
+
+.mw650 {
+    max-width: 650px;
+}
+
+.w1 {
+    width: 1px;
+}
+
+.check-label {
+    display: inline-grid;
+    vertical-align: top;
+    height: 24px;
+    align-items: center;
+    gap: 12px;
+    grid-template-columns: 24px 1fr;
+    user-select: none;
+
+    &.disabled {
+        color: #a8b4be;
+
+        .checkbox {
+            cursor: default;
+        }
+    }
+}
+
+
+.removeField {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    width: 32px;
+    height: 32px;
+    z-index: 2;
+}
+
+.link {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    border-bottom: solid 1px #BFCBD4;
+    transition: all .15s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        border-bottom: solid 1px #748797;
+    }
+}
+
+.info-line {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+
+    + .info-line {
+        margin-top: 12px;
+    }
+
+    &-title {
+        color: #a8b4be;
+        font-weight: 500;
+    }
+}
+
+.actions {
+    position: fixed;
+    right: 32px;
+    bottom: 52px;
+    z-index: 10;
+    background: rgba(11, 12, 13, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 420px;
+    padding: 16px 28px;
+
+    &-title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #ffffff;
+    }
+
+    &-buttons {
+        margin: 16px -8px 0;
+        display: flex;
+        gap: 12px;
+
+        div {
+            padding: 6px 8px;
+            color: #A8B4BE;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 20px;
+            cursor: pointer;
+            border-radius: 4px;
+
+            &:first-child {
+                color: #81beff !important;
+            }
+
+            &:hover {
+                color: #ffffff;
+                background: rgba(237, 246, 255, 0.1);
+            }
+        }
+    }
+}
+
+.chart-settings {
+    display: flex;
+    margin-left: 34px;
+
+    &-item {
+        width: 200px;
+        min-width: 200px;
+        padding: 10px 16px 9px;
+        box-sizing: border-box;
+        cursor: pointer;
+        margin: 0 6px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        background: #ffffff;
+        user-select: none;
+
+        span {
+            font-weight: 500;
+            position: relative;
+            color: #48596d;
+
+            &:after {
+                position: absolute;
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: solid 5px #A8B4BE;
+                border-right: solid 5px transparent;
+                border-left: solid 5px transparent;
+                top: 7px;
+                right: -23px;
+            }
+        }
+
+        div {
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: bold;
+            margin-top: 4px;
+            color: #162133;
+        }
+
+        &.colored {
+            span,
+            div {
+                color: #ffffff;
+            }
+
+            span:after {
+                border-top: solid 5px #fff;
+            }
+        }
+    }
+}

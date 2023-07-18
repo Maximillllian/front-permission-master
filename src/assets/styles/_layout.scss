@@ -1,0 +1,121 @@
+html {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    color: #162133;
+    min-width: 320px;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    outline: none;
+}
+
+#app {
+    height: 100%;
+}
+
+.root {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    transition: all 0.15s ease-in-out;
+
+    &-aside {
+        background: #0E1117;
+        width: 200px;
+        transition: width 0.15s ease-in-out;
+        position: relative;
+
+        &-overlay {
+            background: rgba(#0E1117, .3);
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 30;
+            display: none;
+            transition: left 0.15s ease-in-out, opacity 0.15s ease-in-out;
+        }
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+        }
+    }
+
+    &-main {
+        background: #ffffff;
+        position: relative;
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 100%;
+        transition: width 0.15s ease-in-out;
+
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+}
+
+.scroll-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    padding: 24px 24px 48px;
+
+    > *:first-child {
+        margin-top: 0 !important;
+    }
+
+    > *:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .root {
+        &-aside {
+            width: 0;
+
+            &-overlay {
+                display: block;
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
+        &.menuOpen {
+            .root-aside {
+                width: 200px;
+
+                &-overlay {
+                    opacity: 1;
+                    pointer-events: auto;
+                    left: 200px;
+                }
+            }
+
+            .root-main {
+                width: calc(100% + 200px);
+            }
+        }
+    }
+}
