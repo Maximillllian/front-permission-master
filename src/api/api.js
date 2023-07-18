@@ -37,6 +37,7 @@ const rootPermissionTitles = {
     },
 };
 
+// TODO: откуда берутся названия для экшнов?
 const rootPermission = {
     "part1": {
         "part11": {
