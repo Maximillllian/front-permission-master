@@ -1,3 +1,5 @@
+import { ACTION_TYPE } from "./constants";
+
 export default class PermissionAction {
     #id;
     #title;
@@ -13,5 +15,21 @@ export default class PermissionAction {
         }
 
         return this;
+    }
+
+    toObject() {
+        return {
+            id: this.#id,
+            title: this.#title,
+            type: ACTION_TYPE,
+        };
+    }
+
+    getId() {
+        return this.#id;
+    }
+
+    setTitle(title) {
+        this.#title = title;
     }
 }
