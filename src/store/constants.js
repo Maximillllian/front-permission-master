@@ -1,0 +1,1 @@
+export const ADD_MODAL_ACTION = "modalAdd";

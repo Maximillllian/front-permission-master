@@ -17,7 +17,7 @@
 
 
 <script>
-    import Modals from "@/components/Modals";
+    import Modals from "@/components/UI/popups/Modals";
 
     export default {
         name: "App",
