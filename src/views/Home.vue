@@ -1,29 +1,38 @@
 <template>
-
-    <button @click="createPermission">create</button>
-
+    <div class="container">
+        <button @click="openPermissionsModal">Открыть модалку</button>
+        <button @click="createPermission">create</button>
+        <PermissionSideBar ref="sidebar" />
+    </div>
 </template>
 
 <script>
-    import API from "@/api/api";
+import PermissionSideBar from "../components/business/permissions/PermissionSideBar.vue";
+import API from "@/api/api";
 
-    export default {
-        name: 'Home',
-        data() {
-            return {
-
-            }
+export default {
+    name: "Home",
+    components: {
+        PermissionSideBar,
+    },
+    data() {
+        return {
+            permissions: {},
+        };
+    },
+    methods: {
+        getTemplates() {
+            return API.getTemplates();
         },
-        methods: {
-            getTemplates() {
-                API.getTemplates()
-            },
-            createPermission() {
-                API.createPermission()
-            }
+        createPermission() {
+            API.createPermission();
         },
-        mounted() {
-            this.getTemplates()
+        openPermissionsModal() {
+            this.$refs.sidebar.open();
         }
-    }
+    },
+    async mounted() {
+        this.permissions = await this.getTemplates();
+    },
+}
 </script>

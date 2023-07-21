@@ -168,6 +168,21 @@
     }
 }
 
+a {
+    $link-color: rgb(51, 145, 245);
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+    text-decoration: none;
+    color: $link-color;
+    
+    &:hover {
+        color: rgba($link-color, .7);
+    }
+}
+
 .info-line {
     display: grid;
     grid-template-columns: 150px 1fr;
